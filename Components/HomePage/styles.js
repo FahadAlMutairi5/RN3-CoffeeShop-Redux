@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 17,
     marginTop: 10,
-    opacity: 1
+    opacity: 1,
   },
   footerbutton: {
     color: "white",
@@ -49,6 +49,10 @@ const styles = StyleSheet.create({
     opacity: 1
   },
   background: { height: "100%", width: "100%", flex: 1 },
-  transparent: { backgroundColor: "transparent" }
+  transparent: { 
+    backgroundColor: "rgb(20,90,100)",
+    color: "white",
+    fontWeight: "bold",
+}
 });
 export default styles;

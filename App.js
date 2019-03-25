@@ -8,10 +8,11 @@ import store from "./store";
 
 export default class App extends Component {
   state = {
-    loading: true
+    loading: true,
   };
 
   async componentDidMount() {
+    console.log("Hi")
     await Expo.Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")

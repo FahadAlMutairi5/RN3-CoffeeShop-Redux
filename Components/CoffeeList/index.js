@@ -13,12 +13,14 @@ class CoffeeList extends Component {
   render() {
     const { coffeeShops, loading } = this.props.coffeeReducer;
     let shops;
-
+    nav = (coffeeShop) =>{
+      
+    }
     if (loading) {
       return <Spinner />;
     }
     shops = coffeeShops.map(coffeeShop => (
-      <CoffeeItem coffeeShop={coffeeShop} key={coffeeShop.id} />
+      <CoffeeItem nav={()=>this.props.navigation.navigate("CoffeeDetail",{coffeeShop:coffeeShop})} coffeeShop={coffeeShop} key={coffeeShop.id} />
     ));
 
     return (
