@@ -1,21 +1,35 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 // NativeBase Components
-import { List, Content, Spinner } from "native-base";
-
+import { List, Content, Spinner, Button, } from "native-base";
 // Store
 import coffeeshops from "./list";
-
+import Cart from "../CoffeeCart";
 // Component
 import CoffeeItem from "./CoffeeItem";
+import { Ionicons } from "react-native-vector-icons"
 
 class CoffeeList extends Component {
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: "Coffee List",
+      headerLeft: null,
+      headerRight: (
+        <Button transparent onPress={() => navigation.navigate('CoffeeCart')}> 
+        <Ionicons
+          name="ios-card"
+          size={30}
+          style={{ paddingRight: 16, color: 'white' }}
+        />
+      </Button>
+      )
+    }
+  };
+
   render() {
     const { coffeeShops, loading } = this.props.coffeeReducer;
     let shops;
-    nav = (coffeeShop) =>{
-      
-    }
+    
     if (loading) {
       return <Spinner />;
     }

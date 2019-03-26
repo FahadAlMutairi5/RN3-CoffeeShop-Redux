@@ -14,6 +14,7 @@ import {
   Picker,
   Content
 } from "native-base";
+import { Ionicons } from "react-native-vector-icons"
 
 // Style
 import styles from "./styles";
@@ -22,6 +23,23 @@ import styles from "./styles";
 import coffeeshops from "../CoffeeList/list";
 
 class CoffeeDetail extends Component {
+  static navigationOptions = ({navigation}) => {
+    console.log(navigation.getParam("coffeeShop"))
+    return {
+      title: navigation.getParam("coffeeShop").name,
+      headerLeft: null,
+      headerRight: (
+        <Button transparent onPress={() => navigation.navigate('CoffeeCart')}> 
+        <Ionicons
+          name="ios-card"
+          size={30}
+          style={{ paddingRight: 16, color: 'white' }}
+        />
+      </Button>
+      )
+    }
+  };
+
   state = {
     drink: "Cappuccino",
     option: "Small"
@@ -34,6 +52,7 @@ class CoffeeDetail extends Component {
   };
 
   changeOption = value => {
+    
     this.setState({
       option: value
     });

@@ -3,7 +3,6 @@ import { createAppContainer } from 'react-navigation';
 import CoffeeCart from "../Components/CoffeeCart";
 import CoffeeDetail from "../Components/CoffeeDetail";
 import CoffeeList from "../Components/CoffeeList";
-import CoffeeItem from "../Components/CoffeeList/CoffeeItem";
 import Login from "../Components/Login";
 
 const ourStack = createStackNavigator(
@@ -12,10 +11,21 @@ const ourStack = createStackNavigator(
       CoffeeDetail: CoffeeDetail,
       CoffeeCart: CoffeeCart,
       Login:Login,
-      CoffeeItem:CoffeeItem,
     },
     {
       initialRouteName: "Login",
+      defaultNavigationOptions: {
+        headerTintColor: "white",
+        headerStyle: {
+          backgroundColor: "rgb(20,90,100)"
+        },
+        headerTextStyle: {
+          fontWeight: "bold"
+        },
+        cardStyle: {
+         backgroundColor: "rgb(20,90,100)" 
+        }
+     }
     }
   );
 
